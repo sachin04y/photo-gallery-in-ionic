@@ -1,4 +1,5 @@
 import { camera, trash, close } from 'ionicons/icons';
+import { usePhotoGallery } from '../hooks/usePhotoGallery';
 import {
 	IonContent,
 	IonHeader,
@@ -16,10 +17,13 @@ import {
 } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
+import { useState } from 'react';
 
 const Tab2: React.FC = () => {
 
-	
+
+    const { photos, takePhoto } = usePhotoGallery();
+    console.log(photos)
 	return (
 		<IonPage>
 		<IonHeader>
@@ -28,12 +32,21 @@ const Tab2: React.FC = () => {
 			</IonToolbar>
 		</IonHeader>
 		<IonContent fullscreen>
-			<IonFab vertical="bottom" horizontal="center" slot="fixed">
+            <IonGrid>
+                <IonRow>
+                {photos.map((photo, index) => (
+                    <IonCol size="6" key={photo.filepath}>
+                    <IonImg src={photo.webviewPath} />
+                    </IonCol>
+                ))}
+                </IonRow>
+            </IonGrid>
+            
+            <IonFab vertical="bottom" horizontal="center" slot="fixed">
 				<IonFabButton onClick={() => takePhoto()}>
 				<IonIcon icon={camera}></IonIcon>
 				</IonFabButton>
 			</IonFab>
-			
 		</IonContent>
 		</IonPage>
 	);
