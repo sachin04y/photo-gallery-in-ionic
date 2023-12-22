@@ -1,7 +1,9 @@
 {
   "name": "photo-gallery",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    }
   },
   "type": "react-vite"
 }

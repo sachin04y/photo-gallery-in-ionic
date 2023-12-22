@@ -12,8 +12,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@awesome-cordova-plugins/ionic-webview": "^6.4.0",
     "@capacitor/android": "5.5.0",
     "@capacitor/app": "5.0.6",
+    "@capacitor/browser": "^5.1.0",
     "@capacitor/camera": "^5.0.7",
     "@capacitor/core": "5.5.0",
     "@capacitor/filesystem": "^5.1.4",
@@ -22,6 +24,7 @@
     "@capacitor/keyboard": "5.0.6",
     "@capacitor/preferences": "^5.0.6",
     "@capacitor/status-bar": "5.0.6",
+    "@ionic-native/in-app-browser": "^5.36.0",
     "@ionic/pwa-elements": "^3.2.2",
     "@ionic/react": "^7.0.0",
     "@ionic/react-router": "^7.0.0",
